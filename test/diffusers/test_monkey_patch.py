@@ -21,7 +21,6 @@ from liger_kernel.transformers import LigerSwiGLUMLP
 from liger_kernel.transformers import monkey_patch
 from liger_kernel.transformers.layer_norm import LigerLayerNorm
 from liger_kernel.transformers.monkey_patch import MODEL_TYPE_TO_APPLY_LIGER_FN
-from liger_kernel.diffusers.monkey_patch import apply_liger_kernel_to_gemma
 from liger_kernel.transformers.monkey_patch import _apply_liger_kernel
 from liger_kernel.transformers.monkey_patch import _apply_liger_kernel_to_instance
 
@@ -47,7 +46,7 @@ def is_qwen2_vl_available():
 
 def test_import_from_root():
     try:
-        from liger_kernel.diffusers import apply_liger_kernel_to_flux # noqa: F401
+        from liger_kernel.diffusers import apply_liger_kernel_to_flux  # noqa: F401
     except Exception:
         pytest.fail("Import kernel patch from root fails")
 
